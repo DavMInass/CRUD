@@ -14,7 +14,7 @@ app.get("/", function(req, res){
 app.post("/addInfo", function(req, res){
     const data = req.body.login
     const data1 = req.body.parol
-    console.log(data, data1);
+    console.log('this is' + data, data1);
 });
 
 app.listen(3000, function(){
