@@ -7,23 +7,45 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <% info.forEach(function(justOne) { %>
-    <li>
-      <strong><%= justOne.name %></strong> <br />
-      <strong><%= justOne.organization %></strong>
-      <strong><%= justOne.birth_day %></strong>
-      <br />
-    </li>
-    <% }); %>
 
+
+<div class="form">
     <div class="blok">
-      <input id="myLogin" class="input" type="text" name="login" />
-      <input id="myParol" class="input" type="text" name="parol" />
-      <input id="myEmail" class="input" type="text" name="email" />
-      <div class="knopka">
-        <button type="submit" class="knopka" onclick="aper()">Send</button>
-      </div>
+      <h1 class="title">Add New User</h1>
+
+
+      <input id="myLogin" class="input" type="text" name="login" placeholder="Login" />
+      <input id="myPassword" class="input" type="password" name="Password" placeholder="Password"/>
+      <input id="myEmail" class="input" type="text" name="email"  placeholder="E-mail"/>
+      <input id="location" class="input" type="text" name="location" placeholder="Location"/>
+
+        <button type="submit" class="button" onclick="aper()">Add</button>
     </div>
+
+  </div>
+
+  <table>
+    <tr class="titles">
+        <td>Name</td>
+        <td>Password</td>
+        <td>E-mail</td>
+        <td>Location</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+     <% obj.forEach(function(justOne) { %>
+    <tr>
+        <td><%= justOne.login %></td>
+        <td><%= justOne.Password %></td>
+        <td><%= justOne.email %></td>
+        <td><%= justOne.location   %></td>
+        <td><a class="update" href="update/<%= justOne._id %>">Update</a></td>
+        <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a></td>
+    </tr>
+<% }); %>
+</table>
+
+
     <script src="script.js"></script>
   </body>
 </html>

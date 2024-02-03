@@ -1,18 +1,21 @@
 let login = document.getElementById("myLogin");
 let button = document.getElementById("knopka");
-let parol = document.getElementById("myParol");
+let Password = document.getElementById("myPassword");
 let email = document.getElementById("myEmail");
+let location1 = document.getElementById("location");
+
 
 async function aper() {
-  await fetch("http://localhost:3000/addInfo", {
+  await fetch("/addInfo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
       login: login.value,
-      parol: parol.value,
+      Password: Password.value,
       email: email.value,
+      location: location1.value
     }),
   });
 }
